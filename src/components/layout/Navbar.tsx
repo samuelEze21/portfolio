@@ -6,11 +6,11 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
         {/* Logo/Home Link - Left */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold text-foreground hover:text-foreground/90 transition-colors">
-            Samuel Nwabuze
+            Samuel Nwabueze
           </span>
         </Link>
 
