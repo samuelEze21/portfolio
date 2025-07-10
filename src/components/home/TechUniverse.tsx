@@ -26,10 +26,15 @@ export function TechUniverse() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {technologies.map((tech, index) => (
+          {technologies.map((tech) => (
             <motion.div
               key={tech.name}
-              className="p-4 bg-indigo-800/50 backdrop-blur-sm border border-violet-600/30 hover:border-violet-500/50 rounded-lg text-center transition-all duration-200 hover:transform hover:scale-105"
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-border"
             >
               <div className="text-4xl mb-2">{tech.icon}</div>
               <h3 className="font-medium text-violet-300">{tech.name}</h3>
