@@ -2,9 +2,12 @@ name: Deploy Portfolio
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main      # Production deployment
+      - dev       # Preview deployment
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
