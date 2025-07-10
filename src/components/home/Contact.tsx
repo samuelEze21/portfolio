@@ -130,8 +130,8 @@ export function Contact() {
         >
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold">Get in Touch</h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              Have a project in mind? Let's discuss how we can work together.
+            <p className="text-lg text-muted-foreground mb-8">
+              Have a project in mind? Let&apos;s work together to bring your ideas to life.
             </p>
           </div>
 

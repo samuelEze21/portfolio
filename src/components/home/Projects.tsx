@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Project = {
   title: string;
@@ -63,21 +64,22 @@ export function Projects() {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.title}
               layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-[#064E3B]/50 backdrop-blur-sm border border-[#34D399] border-opacity-30 hover:border-opacity-50 rounded-lg overflow-hidden transition-all duration-200"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="aspect-video relative">
-                <img
+              <div className="relative h-48 overflow-hidden">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full"
+                  fill
+                  className="object-cover transition-transform hover:scale-105"
                 />
               </div>
               <div className="p-6 space-y-4">
