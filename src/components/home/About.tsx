@@ -15,7 +15,7 @@ export function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-6 rounded-lg bg-opacity-10 bg-white border border-[#4ADE80] hover:border-opacity-100 border-opacity-50 transition-all duration-200">
+            <div className="p-6 rounded-lg bg-background border border-foreground/10">
               <h3 className="text-xl font-semibold mb-4">Full-Stack Development</h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Building scalable applications with MERN Stack, Java + Spring Boot, and modern React frameworks.
