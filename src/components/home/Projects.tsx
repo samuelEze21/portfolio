@@ -9,8 +9,9 @@ type Project = {
   description: string;
   tech: string[];
   image: string;
-  link: string;
-  category: 'ai' | 'web3' | 'fullstack' | 'mobile';
+  liveLink: string;
+  githubLink: string;
+  category: 'ai' | 'backend' | 'fullstack' | 'mobile' | 'web3';
 };
 
 const projects: Project[] = [
@@ -19,7 +20,8 @@ const projects: Project[] = [
     description: "An intelligent coding assistant powered by advanced LLMs",
     tech: ["Python", "OpenAI", "React", "TypeScript"],
     image: "/file.svg",
-    link: "#",
+    liveLink: "#",
+    githubLink: "#",
     category: "ai"
   },
   {
@@ -27,8 +29,37 @@ const projects: Project[] = [
     description: "Decentralized finance platform built on Sui blockchain",
     tech: ["Move", "React", "Web3"],
     image: "/window.svg",
-    link: "#",
+    liveLink: "#",
+    githubLink: "#",
     category: "web3"
+  },
+  // Backend Projects
+  {
+    title: "Myhome Agency",
+    description: "A comprehensive real estate management system for property listings, client management, and transaction processing",
+    tech: ["Node.js", "Express", "MongoDB", "RESTful API", "JWT"],
+    image: "/globe.svg",
+    liveLink: "https://myhome-agency.example.com",
+    githubLink: "https://github.com/samuelEze21/myhome-agency",
+    category: "backend"
+  },
+  {
+    title: "RenewConnect",
+    description: "Renewable Energy Financing platform connecting investors with sustainable energy projects through secure payment processing and project tracking",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Microservices", "Docker"],
+    image: "/file.svg",
+    liveLink: "https://renewconnect.example.com",
+    githubLink: "https://github.com/samuelEze21/renewconnect",
+    category: "backend"
+  },
+  {
+    title: "FastPay",
+    description: "Crypto to fiat conversion service with real-time exchange rates, secure wallet integration, and instant transaction processing",
+    tech: ["Python", "Django", "Redis", "Blockchain API", "Celery"],
+    image: "/window.svg",
+    liveLink: "https://fastpay.example.com",
+    githubLink: "https://github.com/samuelEze21/fastpay",
+    category: "backend"
   },
   // Add more projects here
 ];
@@ -49,7 +80,7 @@ export function Projects() {
         </div>
 
         <div className="flex justify-center gap-4 flex-wrap">
-          {['all', 'ai', 'web3', 'fullstack', 'mobile'].map(category => (
+          {['all', 'ai', 'backend', 'web3', 'fullstack', 'mobile'].map(category => (
             <button
               key={category}
               onClick={() => setFilter(category)}
@@ -91,6 +122,24 @@ export function Projects() {
                       {tech}
                     </span>
                   ))}
+                </div>
+                <div className="flex gap-4 mt-4">
+                  <a 
+                    href={project.liveLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#10B981] text-white rounded-lg hover:bg-[#059669] transition-colors"
+                  >
+                    View Live
+                  </a>
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-[#10B981] text-[#10B981] rounded-lg hover:bg-[#10B981] hover:bg-opacity-10 transition-colors"
+                  >
+                    GitHub
+                  </a>
                 </div>
               </div>
             </motion.div>
